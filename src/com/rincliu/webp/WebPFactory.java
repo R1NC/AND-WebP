@@ -9,7 +9,7 @@ import android.graphics.BitmapFactory;
  */
 public final class WebPFactory {
 	
-	// Load library at class loading
+	// Load library
 	static{
 		System.loadLibrary("WebP-Android");
 	}
