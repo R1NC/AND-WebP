@@ -30,4 +30,14 @@ public final class WebPFactory {
 	 */
 	public static native byte[] nativeEncodeBitmap(Bitmap bitmap, int quality);
 	
+	/**
+	 * 
+	 * @param data
+	 * @return
+	 */
+	public static boolean isWebP(byte[] data){
+		return data!=null&&data.length>14
+				&&data[0]=='R'&&data[1]=='I'&&data[2]=='F'&&data[3]=='F'
+				&&data[8]=='W'&&data[9]=='E'&&data[10]=='B'&&data[11]=='P';
+	}
 }

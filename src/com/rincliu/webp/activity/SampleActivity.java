@@ -123,6 +123,7 @@ public class SampleActivity extends Activity implements View.OnClickListener{
 		case R.id.btn1:
 			InputStream rawImageStream = getResources().openRawResource(R.raw.image);
 			byte[] data = streamToBytes(rawImageStream);
+			System.out.println("isWebP: "+WebPFactory.isWebP(data));
 			final Bitmap webpBitmap = WebPFactory.nativeDecodeByteArray(data, null);
 			iv.setImageBitmap(webpBitmap);
 			break;
