@@ -31,7 +31,7 @@ public final class WebPFactory {
 	public static native byte[] nativeEncodeBitmap(Bitmap bitmap, int quality);
 	
 	/**
-	 * 
+	 * Verifies bitmap's format
 	 * @param data
 	 * @return
 	 */
