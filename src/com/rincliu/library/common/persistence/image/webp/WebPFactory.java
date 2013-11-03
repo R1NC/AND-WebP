@@ -1,4 +1,4 @@
-package com.rincliu.webp;
+package com.rincliu.library.common.persistence.image.webp;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;

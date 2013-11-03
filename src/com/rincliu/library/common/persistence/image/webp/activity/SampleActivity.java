@@ -1,12 +1,12 @@
-package com.rincliu.webp.activity;
+package com.rincliu.library.common.persistence.image.webp.activity;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 
-import com.rincliu.webp.R;
-import com.rincliu.webp.WebPFactory;
+import com.rincliu.library.common.persistence.image.webp.WebPFactory;
+import com.rincliu.library.R;
 
 import android.app.Activity;
 import android.content.Intent;
