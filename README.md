@@ -1,8 +1,7 @@
 Introduction
 ==========
-Google added WebP support in ICS(Android 4.0).<BR/>
-But with this project, you need not to care about the compatibility.<BR/>
-It's based on Google's open source project [Chromium](https://git.chromium.org/);<BR/>
+Google's origin Android API doesn't support WebP until ICS(Android 4.0).<BR/>
+This project is a native(C++) implementation based on Google's open source project [Chromium](https://git.chromium.org/). So you need not to care about the compatibility.<BR/>
 To know more about this project, visit [my blog](http://rincliu.com/blog/2013/07/10/androidping-webpde-nativezhi-chi-jian-rong-4-dot-0yi-xia-she-bei/).
 Features
 ==========
