@@ -16,5 +16,3 @@ public static boolean isWebP(byte[] data);
 Usage
 ==========
 Just build the cpp files under jni folder with NDK. And then enjoy it!<BR/>
-NOTE: If you’ve updated your Android SDK to the latest version, [a JNI error](http://stackoverflow.com/questions/14765776/jni-error-app-bug-accessed-stale-local-reference-0xbc00021-index-8-in-a-tabl) may occur.
-Then you should set targetSdkVersion to 13 to avoid it.

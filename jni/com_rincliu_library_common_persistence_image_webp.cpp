@@ -29,21 +29,27 @@ namespace lang {
 
 jclass_NullPointerException::jclass_NullPointerException(JNIEnv* jniEnv)
 {
-	jclassRef = jniEnv->FindClass("java/lang/NullPointerException");
+	jclass tmpClass = jniEnv->FindClass("java/lang/NullPointerException");
+	jclassRef = (jclass)jniEnv->NewGlobalRef(tmpClass);
+
 	assert(jclassRef == 0);
 }
 jclass_NullPointerException* NullPointerException = 0;
 
 jclass_IllegalArgumentException::jclass_IllegalArgumentException(JNIEnv* jniEnv)
 {
-	jclassRef = jniEnv->FindClass("java/lang/IllegalArgumentException");
+	jclass tmpClass = jniEnv->FindClass("java/lang/IllegalArgumentException");
+	jclassRef = (jclass)jniEnv->NewGlobalRef(tmpClass);
+
 	assert(jclassRef == 0);
 }
 jclass_IllegalArgumentException* IllegalArgumentException = 0;
 
 jclass_RuntimeException::jclass_RuntimeException(JNIEnv* jniEnv)
 {
-	jclassRef = jniEnv->FindClass("java/lang/RuntimeException");
+	jclass tmpClass = jniEnv->FindClass("java/lang/RuntimeException");
+	jclassRef = (jclass)jniEnv->NewGlobalRef(tmpClass);
+
 	assert(jclassRef == 0);
 }
 jclass_RuntimeException* RuntimeException = 0;
@@ -58,7 +64,9 @@ jclass_Bitmap* Bitmap = 0;
 jclass_Bitmap::jclass_Bitmap(JNIEnv* jniEnv)
 	: Config(jniEnv)
 {
-	jclassRef = jniEnv->FindClass("android/graphics/Bitmap");
+	jclass tmpClass = jniEnv->FindClass("android/graphics/Bitmap");
+	jclassRef = (jclass)jniEnv->NewGlobalRef(tmpClass);
+
 	assert(jclassRef == 0);
 
 	createBitmap = jniEnv->GetStaticMethodID(jclassRef,
@@ -68,7 +76,9 @@ jclass_Bitmap::jclass_Bitmap(JNIEnv* jniEnv)
 }
 jclass_Bitmap::jclass_Config::jclass_Config(JNIEnv* jniEnv)
 {
-	jclassRef = jniEnv->FindClass("android/graphics/Bitmap$Config");
+	jclass tmpClass = jniEnv->FindClass("android/graphics/Bitmap$Config");
+	jclassRef = (jclass)jniEnv->NewGlobalRef(tmpClass);
+
 	assert(jclassRef == 0);
 
 	ARGB_8888 = jniEnv->GetStaticFieldID(jclassRef,
@@ -84,7 +94,9 @@ jclass_BitmapFactory::jclass_BitmapFactory(JNIEnv* jniEnv)
 }
 jclass_BitmapFactory::jclass_Options::jclass_Options(JNIEnv* jniEnv)
 {
-	jclassRef = jniEnv->FindClass("android/graphics/BitmapFactory$Options");
+	jclass tmpClass = jniEnv->FindClass("android/graphics/BitmapFactory$Options");
+	jclassRef = (jclass)jniEnv->NewGlobalRef(tmpClass);
+
 	assert(jclassRef == 0);
 	
 	inJustDecodeBounds = jniEnv->GetFieldID(jclassRef,
