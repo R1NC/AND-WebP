@@ -39,8 +39,7 @@ import android.view.Window;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-public class SampleActivity extends Activity implements View.OnClickListener
-{
+public class SampleActivity extends Activity implements View.OnClickListener {
     private ImageView iv = null;
 
     private File file = null;
@@ -57,20 +56,15 @@ public class SampleActivity extends Activity implements View.OnClickListener
 
     private final int MSG_ERROR = 4;
 
-    private byte[] streamToBytes(InputStream is)
-    {
+    private byte[] streamToBytes(InputStream is) {
         ByteArrayOutputStream os = new ByteArrayOutputStream(1024);
         byte[] buffer = new byte[1024];
         int len;
-        try
-        {
-            while ((len = is.read(buffer)) >= 0)
-            {
+        try {
+            while ((len = is.read(buffer)) >= 0) {
                 os.write(buffer, 0, len);
             }
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             e.printStackTrace();
             handler.sendEmptyMessage(MSG_ERROR);
         }
@@ -78,8 +72,7 @@ public class SampleActivity extends Activity implements View.OnClickListener
     }
 
     @Override
-    public void onCreate(Bundle savedInstanceState)
-    {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
         setContentView(R.layout.main);
@@ -91,15 +84,12 @@ public class SampleActivity extends Activity implements View.OnClickListener
     }
 
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent intent)
-    {
+    protected void onActivityResult(int requestCode, int resultCode, Intent intent) {
         super.onActivityResult(requestCode, resultCode, intent);
         filePath = null;
-        switch (requestCode)
-        {
+        switch (requestCode) {
             case MSG_SELECT_IMG:
-                if (resultCode == RESULT_OK)
-                {
+                if (resultCode == RESULT_OK) {
                     Uri selectedImage = intent.getData();
                     String[] filePathColumn = {MediaStore.Images.Media.DATA};
                     Cursor cursor = getContentResolver().query(selectedImage, filePathColumn, null, null, null);
@@ -110,40 +100,30 @@ public class SampleActivity extends Activity implements View.OnClickListener
                 }
                 break;
             case MSG_CAPTURE_IMG:
-                if (resultCode == RESULT_OK)
-                {
+                if (resultCode == RESULT_OK) {
                     filePath = file.getAbsolutePath();
                     file = null;
                 }
                 break;
         }
-        if (filePath != null)
-        {
-            if (isEncoding)
-            {
+        if (filePath != null) {
+            if (isEncoding) {
                 Toast.makeText(this, "Please wait last encoding!", Toast.LENGTH_SHORT).show();
-            }
-            else
-            {
+            } else {
                 setTitle("Encoding...");
                 setProgressBarIndeterminateVisibility(true);
-                new Thread()
-                {
+                new Thread() {
                     @Override
-                    public void run()
-                    {
+                    public void run() {
                         isEncoding = true;
                         Bitmap selectedBitmap = BitmapFactory.decodeFile(filePath);
                         byte[] webpImageData = WebPFactory.nativeEncodeBitmap(selectedBitmap, 100);
-                        try
-                        {
+                        try {
                             FileOutputStream dumpStream = new FileOutputStream(new File(
                                     Environment.getExternalStorageDirectory(), "dump.webp"));
                             dumpStream.write(webpImageData);
                             dumpStream.close();
-                        }
-                        catch (Exception e)
-                        {
+                        } catch (Exception e) {
                             e.printStackTrace();
                             handler.sendEmptyMessage(MSG_ERROR);
                         }
@@ -160,10 +140,8 @@ public class SampleActivity extends Activity implements View.OnClickListener
     }
 
     @Override
-    public void onClick(View arg0)
-    {
-        switch (arg0.getId())
-        {
+    public void onClick(View arg0) {
+        switch (arg0.getId()) {
             case R.id.btn1:
                 InputStream rawImageStream = getResources().openRawResource(R.raw.image);
                 byte[] data = streamToBytes(rawImageStream);
@@ -186,13 +164,10 @@ public class SampleActivity extends Activity implements View.OnClickListener
         }
     }
 
-    private Handler handler = new Handler()
-    {
+    private Handler handler = new Handler() {
         @Override
-        public void handleMessage(Message msg)
-        {
-            switch (msg.what)
-            {
+        public void handleMessage(Message msg) {
+            switch (msg.what) {
                 case MSG_SHOW_BITMAP:
                     setProgressBarIndeterminateVisibility(false);
                     setTitle(R.string.app_name);
