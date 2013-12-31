@@ -39,7 +39,7 @@ import android.view.Window;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-public class SampleActivity extends Activity implements View.OnClickListener {
+public class WebPActivity extends Activity implements View.OnClickListener {
     private ImageView iv = null;
 
     private File file = null;

@@ -16,8 +16,8 @@
 #include <jni.h>
 /* Header for class android_backport_webp_WebPFactory */
 
-#ifndef _Included_com_rincliu_webp_WebPFactory
-#define _Included_com_rincliu_webp_WebPFactory
+#ifndef _Included_com_rincliu_library_common_persistence_image_webp_WebPFactory
+#define _Included_com_rincliu_library_common_persistence_image_webp_WebPFactory
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -26,7 +26,7 @@ extern "C" {
  * Method:    nativeDecodeByteArray
  * Signature: ([BLandroid/graphics/BitmapFactory/Options;)Landroid/graphics/Bitmap;
  */
-JNIEXPORT jobject JNICALL Java_com_rincliu_webp_WebPFactory_nativeDecodeByteArray
+JNIEXPORT jobject JNICALL Java_com_rincliu_library_common_persistence_image_webp_WebPFactory_nativeDecodeByteArray
   (JNIEnv *, jclass, jbyteArray, jobject);
 
 /*
@@ -34,7 +34,7 @@ JNIEXPORT jobject JNICALL Java_com_rincliu_webp_WebPFactory_nativeDecodeByteArra
  * Method:    nativeEncodeBitmap
  * Signature: (Landroid/graphics/Bitmap;I)[B
  */
-JNIEXPORT jbyteArray JNICALL Java_com_rincliu_webp_WebPFactory_nativeEncodeBitmap
+JNIEXPORT jbyteArray JNICALL Java_com_rincliu_library_common_persistence_image_webp_WebPFactory_nativeEncodeBitmap
   (JNIEnv *, jclass, jobject, jint quality);
 
 #ifdef __cplusplus

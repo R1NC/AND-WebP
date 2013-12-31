@@ -13,14 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-#include "com_rincliu_webp.h"
+#include "com_rincliu_library_common_persistence_image_webp.h"
 
 #include <jni.h>
 
 #include <assert.h>
 #include <android/log.h>
 
-const char* const LOG_TAG = "com_rincliu.webp:native";
+const char* const LOG_TAG = "com_rincliu_library_common_persistence_image.webp:native";
 
 namespace jrefs {
 

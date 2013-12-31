@@ -13,8 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-#ifndef _com_rincliu_webp
-#define _com_rincliu_webp
+#ifndef _com_rincliu_library_common_persistence_image_webp
+#define _com_rincliu_library_common_persistence_image_webp
 
 #include <jni.h>
 

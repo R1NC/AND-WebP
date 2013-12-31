@@ -13,8 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-#include "com_rincliu_webp_WebPFactory.h"
-#include "com_rincliu_webp.h"
+#include "com_rincliu_library_common_persistence_image_webp_WebPFactory.h"
+#include "com_rincliu_library_common_persistence_image_webp.h"
 
 #include <stdio.h>
 #include <string.h>
@@ -28,11 +28,11 @@ extern "C" {
 #endif
 
 /*
- * Class:     com_rincliu_webp_WebPFactory
+ * Class:     com_rincliu_library_common_persistence_image_webp_WebPFactory
  * Method:    nativeDecodeByteArray
  * Signature: ([BLandroid/graphics/BitmapFactory/Options;)Landroid/graphics/Bitmap;
  */
-JNIEXPORT jobject JNICALL Java_com_rincliu_webp_WebPFactory_nativeDecodeByteArray
+JNIEXPORT jobject JNICALL Java_com_rincliu_library_common_persistence_image_webp_WebPFactory_nativeDecodeByteArray
   (JNIEnv *jniEnv, jclass, jbyteArray byteArray, jobject options)
 {
 	// Check if input is valid
@@ -239,11 +239,11 @@ static uint32_t GetDestinationScanlinePixelByteSize(int config)
 }
 
 /*
- * Class:     com_rincliu_webp_WebPFactory
+ * Class:     com_rincliu_library_common_persistence_image_webp_WebPFactory
  * Method:    nativeEncodeBitmap
  * Signature: (Landroid/graphics/Bitmap;I)[B
  */
-JNIEXPORT jbyteArray JNICALL Java_com_rincliu_webp_WebPFactory_nativeEncodeBitmap
+JNIEXPORT jbyteArray JNICALL Java_com_rincliu_library_common_persistence_image_webp_WebPFactory_nativeEncodeBitmap
   (JNIEnv * jniEnv, jclass, jobject bitmap, jint quality)
 {
 	// Check if input is valid

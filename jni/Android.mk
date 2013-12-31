@@ -50,11 +50,11 @@ include $(BUILD_STATIC_LIBRARY)
 # My Library 
 include $(CLEAR_VARS)
 
-LOCAL_MODULE    := WebP-Android
+LOCAL_MODULE    := Roid-WebP
 
 LOCAL_SRC_FILES := \
-	com_rincliu_webp.cpp \
-	com_rincliu_webp_WebPFactory.cpp
+	com_rincliu_library_common_persistence_image_webp.cpp \
+	com_rincliu_library_common_persistence_image_webp_WebPFactory.cpp
 
 LOCAL_CFLAGS := -Wall -DANDROID
 

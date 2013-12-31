@@ -27,11 +27,11 @@ public final class WebPFactory {
 
     // Load library
     static {
-        System.loadLibrary("WebP-Android");
+        System.loadLibrary("Roid-WebP");
     }
 
     /**
-     * Decodes byte array to bitmap
+     * Decode byte array to bitmap
      * 
      * @param data Byte array with WebP bitmap data
      * @param opts Options to control decoding. Accepts null
@@ -40,7 +40,7 @@ public final class WebPFactory {
     public static native Bitmap nativeDecodeByteArray(byte[] data, BitmapFactory.Options options);
 
     /**
-     * Encodes bitmap into byte array
+     * Encode bitmap into byte array
      * 
      * @param bitmap Bitmap
      * @param quality Quality, should be between 0 and 100
@@ -49,7 +49,7 @@ public final class WebPFactory {
     public static native byte[] nativeEncodeBitmap(Bitmap bitmap, int quality);
 
     /**
-     * Verifies bitmap's format
+     * Verify bitmap's format
      * 
      * @param data
      * @return
