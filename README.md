@@ -5,7 +5,7 @@ This project is a native(C++) implementation based on Google's open source proje
 Features
 ==========
 
-```
+```java
 public static native Bitmap nativeDecodeByteArray(byte[] data, BitmapFactory.Options options);
 
 public static native byte[] nativeEncodeBitmap(Bitmap bitmap, int quality);
